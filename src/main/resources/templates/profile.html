@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
@@ -11,18 +11,21 @@
     <div class="row">
         <div class="col">
             <div>
-                Imagen
-            </div>
-            <div>
-                Timeline
+                <div>
+                    <img th:src="@{${imageUrl}}">
+                </div>
+                <tr th:each="tweet: ${tweets}">
+                    <td th:text="${tweet.getFromUser()}"/>
+                    <td th:text="${tweet.getText()}"/>
+                </tr>
             </div>
         </div>
         <div class="col">
             <div>
-                Name
+                <p th:text=${twitterUserName}></p>
             </div>
             <div>
-                Profile
+                <p th:text=${description}></p>
             </div>
         </div>
     </div>

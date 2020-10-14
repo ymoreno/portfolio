@@ -1,10 +1,11 @@
-.column {
-    float: left;
-    width: 50%;
+.p {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-palette: dark;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.container {
+    border: 1px black;
+    background-color: black;
 }
+
