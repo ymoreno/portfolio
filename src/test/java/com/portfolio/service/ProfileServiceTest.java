@@ -1,5 +1,6 @@
 package com.portfolio.service;
 
+import com.portfolio.model.Portfolio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ProfileServiceTest {
 
     @Autowired
-    ProfileService profileService;
+    PortfolioService profileService;
 
     @DisplayName("Test twitter")
     @Test
@@ -17,4 +18,12 @@ class ProfileServiceTest {
         profileService.getTwitterInfo();
 
     }
+
+    @DisplayName("Test JPA")
+    @Test
+    void getPortfolio() {
+        Portfolio portfolio = profileService.getPortfolio(1L);
+        System.out.println(portfolio.getDescription());
+    }
+
 }
