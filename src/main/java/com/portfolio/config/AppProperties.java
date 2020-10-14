@@ -17,6 +17,11 @@ public class AppProperties {
     private String accessToken;
     @Value("${twitter.access_token_secret}")
     private String accessTokenSecret;
-
+    @Value("${spring.datasource.url}")
+    private String url;
+    @Value("${spring.datasource.username}")
+    private String username;
+    @Value("${spring.datasource.password}")
+    private String password;
 
 }
